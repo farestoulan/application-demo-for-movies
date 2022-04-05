@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.movies.Database.MovieModelClass;
 
 import java.util.List;
 
@@ -20,10 +21,10 @@ public class Adaptry extends RecyclerView.Adapter<Adaptry.MyViewHolder> {
      private final List<MovieModelClass> mData;
 
 
+    public Adaptry(Context context,List<MovieModelClass>data) {
 
-    public Adaptry(Context mContext, List<MovieModelClass > mData) {
-        this.mContext = mContext;
-        this.mData = mData;
+        this.mContext= context ;
+        this.mData =data ;
     }
 
     @NonNull
