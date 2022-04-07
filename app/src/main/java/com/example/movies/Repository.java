@@ -5,9 +5,11 @@ import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
+import androidx.room.RoomDatabase;
 
 import com.example.movies.Database.Daoclass;
 import com.example.movies.Database.DatabaseClass;
+import com.example.movies.Database.MovieModelClass;
 
 import java.util.List;
 
@@ -31,30 +33,39 @@ public class Repository {
         dao = database.getDao();
 
         volumesResponseLiveData = new MutableLiveData<Results>();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        if (dao.getAllData() != null) {
+            volumesResponseLiveData.postValue(dao.getAllData());
+        } else {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
 
-        ApiInterface apiInterface = retrofit.create(ApiInterface.class);
-        Call<Results> call = apiInterface.getMovie();
-        call.enqueue(new Callback<Results>() {
-            @Override
-            public void onResponse(Call<Results> call, Response<Results> response) {
-                if (response.body() != null) {
-                    volumesResponseLiveData.postValue(response.body());
+            ApiInterface apiInterface = retrofit.create(ApiInterface.class);
+            Call<Results> call = apiInterface.getMovie();
+            call.enqueue(new Callback<Results>() {
+                @Override
+                public void onResponse(Call<Results> call, Response<Results> response) {
+                    if (response.body() != null) {
+                        dao.insertAllData(response.body());
+                        volumesResponseLiveData.postValue(dao.getAllData());
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<Results> call, Throwable t) {
-                volumesResponseLiveData.postValue(null);
-            }
-        });
+                @Override
+                public void onFailure(Call<Results> call, Throwable t) {
+                    volumesResponseLiveData.postValue(null);
+                }
+            });
+        }
+
+
     }
+
 
     public MutableLiveData<Results> getVolumesResponseLiveData() {
         return volumesResponseLiveData;
     }
+
 
 }

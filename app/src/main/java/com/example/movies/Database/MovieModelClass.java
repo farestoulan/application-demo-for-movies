@@ -1,19 +1,17 @@
 package com.example.movies.Database;
 
-import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
-@Entity(tableName = "Movie")
+
+
 public class MovieModelClass {
-    @NonNull
-    @PrimaryKey
     @SerializedName("id")
     private String id;
+
     @SerializedName("title")
     private String title;
+
     @SerializedName("poster_path")
     private String poster_path;
 

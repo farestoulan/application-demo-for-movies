@@ -1,9 +1,12 @@
 package com.example.movies.Database;
 
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.movies.Results;
 
 import java.util.List;
 
@@ -11,9 +14,9 @@ import java.util.List;
 public interface Daoclass {
 
     @Insert
-    void insertAllData(MovieModelClass  model);
+    void insertAllData(Results  results);
 
     @Query("select * from Movie")
-    List<MovieModelClass>getAllData();
+    Results getAllData();
 
 }
