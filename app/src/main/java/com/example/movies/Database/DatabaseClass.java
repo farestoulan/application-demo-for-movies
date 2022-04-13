@@ -20,7 +20,7 @@ public abstract Daoclass getDao();
 private static DatabaseClass instance;
 
 
-public static DatabaseClass getDatabase(final Context context){
+public static DatabaseClass getDatabase( Context context){
 
 
     if (instance == null){
