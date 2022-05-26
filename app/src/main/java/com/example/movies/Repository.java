@@ -1,5 +1,7 @@
 package com.example.movies;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.movies.Database.LocalDataSource;
@@ -23,12 +25,11 @@ public class Repository {
 
     public MutableLiveData<Results> getdata() {
         MutableLiveData<Results> res = new MutableLiveData<>();
-        if (local.getLocalData() != null) {
-            res.postValue(local.getLocalData());
-        } else {
+        if (remote != null) {
             remote.remotData(new Callback<Results>() {
                 @Override
                 public void onResponse(Call<Results> call, Response<Results> response) {
+
                     if (response.body() != null) {
                         local.insertLocalData(response.body());
                         res.postValue(response.body());
@@ -37,9 +38,14 @@ public class Repository {
 
                 @Override
                 public void onFailure(Call<Results> call, Throwable t) {
+
+
                     res.postValue(null);
                 }
             });
+        } else {
+
+            res.postValue(local.getLocalData());
 
         }
         return res;

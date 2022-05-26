@@ -1,14 +1,13 @@
 package com.example.movies.Database;
 
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.example.movies.Results;
 
-import java.util.List;
+
 
 @Dao
 public interface Daoclass {

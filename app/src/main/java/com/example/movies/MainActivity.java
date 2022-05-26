@@ -13,6 +13,8 @@ import com.example.movies.Database.MyViewModelFactory;
 import com.example.movies.Database.RemotDataSource;
 
 public class MainActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    TextView textView;
 
 
     @SuppressLint("SetTextI18n")
@@ -20,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RecyclerView recyclerView;
-        TextView textView;
         MyViewModelFactory viewModelFactory;
         RemotDataSource remotDataSource = new RemotDataSource();
         LocalDataSource localDataSource = new LocalDataSource(getApplicationContext());
