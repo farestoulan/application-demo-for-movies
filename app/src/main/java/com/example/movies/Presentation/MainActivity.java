@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import com.example.movies.R;
 import com.example.movies.Presentation.adapter.Adaptry;
-import com.example.movies.data.dataSource.LocalDataSource;
-import com.example.movies.data.dataSource.RemotDataSource;
+import com.example.movies.data.dataSource.local.LocalDataSource;
+import com.example.movies.data.dataSource.remote.RemotDataSource;
 import com.example.movies.data.repository.Repository;
 import com.example.movies.Presentation.viewModel.MovieViewModel;
 import com.example.movies.Presentation.viewModel.MyViewModelFactory;

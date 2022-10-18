@@ -1,9 +1,9 @@
-package com.example.movies.data.dataSource;
+package com.example.movies.data.dataSource.local;
 
 import android.content.Context;
 
-import com.example.movies.data.Database.Daoclass;
-import com.example.movies.data.Database.DatabaseClass;
+import com.example.movies.data.dataSource.local.Database.Daoclass;
+import com.example.movies.data.dataSource.local.Database.DatabaseClass;
 import com.example.movies.data.model.Results;
 
 public class LocalDataSource {

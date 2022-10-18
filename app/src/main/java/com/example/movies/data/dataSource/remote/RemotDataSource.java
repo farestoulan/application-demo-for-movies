@@ -1,4 +1,4 @@
-package com.example.movies.data.dataSource;
+package com.example.movies.data.dataSource.remote;
 
 import androidx.lifecycle.MutableLiveData;
 
