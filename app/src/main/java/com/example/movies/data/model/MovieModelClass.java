@@ -1,12 +1,17 @@
-package com.example.movies;
+package com.example.movies.data.model;
+
 
 import com.google.gson.annotations.SerializedName;
+
+
 
 public class MovieModelClass {
     @SerializedName("id")
     private String id;
+
     @SerializedName("title")
     private String title;
+
     @SerializedName("poster_path")
     private String poster_path;
 
