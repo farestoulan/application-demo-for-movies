@@ -1,11 +1,11 @@
-package com.example.movies;
+package com.example.movies.data.repository;
 
-import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.movies.Database.LocalDataSource;
-import com.example.movies.Database.RemotDataSource;
+import com.example.movies.data.model.Results;
+import com.example.movies.data.dataSource.LocalDataSource;
+import com.example.movies.data.dataSource.RemotDataSource;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,7 +25,11 @@ public class Repository {
 
     public MutableLiveData<Results> getdata() {
         MutableLiveData<Results> res = new MutableLiveData<>();
-        if (remote != null) {
+        if (local.getLocalData() != null) {
+            res.postValue(local.getLocalData());
+
+        }
+        else {
             remote.remotData(new Callback<Results>() {
                 @Override
                 public void onResponse(Call<Results> call, Response<Results> response) {
@@ -43,9 +47,8 @@ public class Repository {
                     res.postValue(null);
                 }
             });
-        } else {
 
-            res.postValue(local.getLocalData());
+       
 
         }
         return res;

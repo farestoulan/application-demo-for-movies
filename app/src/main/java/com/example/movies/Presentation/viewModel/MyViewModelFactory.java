@@ -1,12 +1,11 @@
-package com.example.movies.Database;
+package com.example.movies.Presentation.viewModel;
 
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.movies.MovieViewModel;
-import com.example.movies.Repository;
+import com.example.movies.data.repository.Repository;
 
 
 public class MyViewModelFactory implements ViewModelProvider.Factory {

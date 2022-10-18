@@ -1,13 +1,10 @@
-package com.example.movies.Database;
-
-import static okhttp3.internal.Internal.instance;
+package com.example.movies.data.dataSource;
 
 import android.content.Context;
 
-import androidx.lifecycle.MutableLiveData;
-
-import com.example.movies.Repository;
-import com.example.movies.Results;
+import com.example.movies.data.Database.Daoclass;
+import com.example.movies.data.Database.DatabaseClass;
+import com.example.movies.data.model.Results;
 
 public class LocalDataSource {
     Daoclass dao;

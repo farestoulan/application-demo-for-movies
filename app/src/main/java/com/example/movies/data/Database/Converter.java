@@ -1,8 +1,8 @@
-package com.example.movies.Database;
+package com.example.movies.data.Database;
 
 import androidx.room.TypeConverter;
 
-import com.example.movies.Results;
+import com.example.movies.data.model.MovieModelClass;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

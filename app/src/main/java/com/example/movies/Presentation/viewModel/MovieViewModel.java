@@ -1,9 +1,12 @@
-package com.example.movies;
+package com.example.movies.Presentation.viewModel;
 
 
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.movies.data.model.Results;
+import com.example.movies.data.repository.Repository;
 
 public class MovieViewModel extends ViewModel {
 

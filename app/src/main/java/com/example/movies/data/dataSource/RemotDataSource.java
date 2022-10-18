@@ -1,13 +1,12 @@
-package com.example.movies.Database;
+package com.example.movies.data.dataSource;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.movies.ApiInterface;
-import com.example.movies.Results;
+import com.example.movies.data.model.ApiInterface;
+import com.example.movies.data.model.Results;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

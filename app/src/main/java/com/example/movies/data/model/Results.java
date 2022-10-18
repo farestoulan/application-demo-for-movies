@@ -1,9 +1,8 @@
-package com.example.movies;
+package com.example.movies.data.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import com.example.movies.Database.MovieModelClass;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

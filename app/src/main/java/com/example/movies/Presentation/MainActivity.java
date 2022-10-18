@@ -1,4 +1,4 @@
-package com.example.movies;
+package com.example.movies.Presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
@@ -8,9 +8,13 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.movies.Database.LocalDataSource;
-import com.example.movies.Database.MyViewModelFactory;
-import com.example.movies.Database.RemotDataSource;
+import com.example.movies.R;
+import com.example.movies.Presentation.adapter.Adaptry;
+import com.example.movies.data.dataSource.LocalDataSource;
+import com.example.movies.data.dataSource.RemotDataSource;
+import com.example.movies.data.repository.Repository;
+import com.example.movies.Presentation.viewModel.MovieViewModel;
+import com.example.movies.Presentation.viewModel.MyViewModelFactory;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
