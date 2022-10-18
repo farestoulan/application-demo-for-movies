@@ -1,4 +1,4 @@
-package com.example.movies.data.Database;
+package com.example.movies.data.dataSource.local.Database;
 
 import android.content.Context;
 

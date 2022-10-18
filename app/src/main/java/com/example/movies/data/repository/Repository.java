@@ -4,8 +4,8 @@ package com.example.movies.data.repository;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.movies.data.model.Results;
-import com.example.movies.data.dataSource.LocalDataSource;
-import com.example.movies.data.dataSource.RemotDataSource;
+import com.example.movies.data.dataSource.local.LocalDataSource;
+import com.example.movies.data.dataSource.remote.RemotDataSource;
 
 import retrofit2.Call;
 import retrofit2.Callback;
